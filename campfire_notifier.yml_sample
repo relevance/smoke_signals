@@ -1,0 +1,5 @@
+subdomain: your_campfirenow_subdomain
+use_ssl: true_or_false
+login: the_login_to_use
+password: the_password
+room: the_room

@@ -1,0 +1,47 @@
+h1. Campfire Notifier for Ruby Cruise Control
+
+h2. Version: 0.1 (forked from Giles Bowkett's 0.3)
+
+h2. Description
+A plugin for CruiseControl.rb that does the following features:
+	* Send notifications to a Campfire room with the build status (success, failure, fixed).  
+	* Detects and sends notifications re Subversion failures.  
+	* Supports different rooms per build.
+
+h2. Install
+# sudo gem install tinder
+# copy campfire_notifier.rb into <CRUISE_ROOT>/builder_plugins/installed
+
+h2. Usage
+# copy campfire_notifier.yml_sample to <CRUISE_ROOT>/config/campfire_notifier.yml
+# modify it with your campfire specifics
+# for project-specific rooms, in your build's specific cruise_config.rb add the following:
+   project.campfire_notifier.room_name = "Room name" # replace Room name
+# restart CruiseControl.rb
+
+h2. URLS
+	* "svn trunk":https://opensource.thinkrelevance.com/svn/incubator/cc_campfire_notifier/campfire_notifier.rb
+	* "CC.rb plugins documentation":http://cruisecontrolrb.thoughtworks.com/documentation/plugins
+
+h2. LICENSE
+
+Copyright (c) 2007-8 Relevance Inc. (Forked from http://rubyforge.org/projects/campfire-ccrb/)
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
