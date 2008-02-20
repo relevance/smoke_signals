@@ -26,11 +26,11 @@ describe "CampfireNotifier" do
     notifier.expects(:clear_flag)
     notifier.build_finished(build)
   end
-  it "recognizer apr_error as svn failures" do
+  it "recognize apr_error as svn failures" do
     notifier = CampfireNotifier.new
     notifier.is_subversion_down?(stub(:message => "apr_error=something")).should == true
   end
-  it "recognizer PROPFIND request failure as svn failures" do
+  it "recognize PROPFIND request failure as svn failures" do
     notifier = CampfireNotifier.new
     notifier.is_subversion_down?(stub(:message => "svn: PROPFIND request failed|apr_error")).should == true
   end
