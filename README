@@ -1,22 +1,20 @@
 h1. Smoke Signals
 
-h2. Version: 0.1 
-Forked from Giles Bowkett's cc_campfire_notifier version 0.3
-
 h2. Description
-A plugin for CruiseControl.rb that does the following features:
-	* Send notifications to a Campfire room with the build status (success, failure, fixed) along with a URL to the build.
-	* Detects and sends notifications re Subversion failures.  
-	* Supports different rooms per build.
+A plugin for CruiseControl.rb offering the following features:
+    * Sends notifications to a Campfire room with the build status (success, failure, fixed) along with a URL to the build.
+    * Detects and sends notifications of Subversion failures.
+    * Supports different rooms per project. 
 
 h2. Install
-# sudo gem install tinder
-# copy smoke_signals.rb into <CRUISE_ROOT>/builder_plugins/installed
-# copy smoke_signals.yml_sample to <CRUISE_ROOT>/config/smoke_signals.yml
-# modify it with your campfire specifics
-# for project-specific rooms, in your build's specific cruise_config.rb add the following:
-   project.smoke_signals.room_name = "Room name" # replace Room name
-# restart CruiseControl.rb
+Download smoke_signals via git (git clone git://github.com/relevance/smoke_signals.git) or as a tarball (http://github.com/relevance/smoke_signals/tarball/master). Then, on your cruisecontrol.rb server:
+ # sudo gem install tinder
+ # cp smoke_signals.rb <CRUISE_ROOT>/builder_plugins/installed
+ # cp smoke_signals.yml_sample <CRUISE_ROOT>/config/smoke_signals.yml
+ # edit <CRUISE_ROOT>/config/smoke_signals.yml with your campfire specifics
+ # for project-specific rooms, in your build's specific cruise_config.rb add the following: 
+ #     project.smoke_signals.room_name = "Room name" # replace Room name
+ # restart CruiseControl.rb
 
 h2. URLS
   * "Home page": http://opensource.thinkrelevance.com/wiki/smoke_signals
