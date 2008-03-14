@@ -14,15 +14,15 @@ describe "CampfireNotifier" do
   end
   it "speaks when the build is successful" do
     notifier = CampfireNotifier.new
-    build = stub(:label => "label", :failed? => false)
-    notifier.expects(:speak).with("Build label successful")
+    build = stub(:label => "label", :failed? => false, :url => "http://cc.project.com/builds/Project/label")
+    notifier.expects(:speak).with("Build label successful\nSee http://cc.project.com/builds/Project/label for details")
     notifier.expects(:clear_flag)
     notifier.build_finished(build)
   end
   it "speaks when the build fails" do
     notifier = CampfireNotifier.new
-    build = stub(:label => "label", :failed? => true)
-    notifier.expects(:speak).with("Build label broken")
+    build = stub(:label => "label", :failed? => true, :url => "http://cc.project.com/builds/Project/label")
+    notifier.expects(:speak).with("Build label broken\nSee http://cc.project.com/builds/Project/label for details")
     notifier.expects(:clear_flag)
     notifier.build_finished(build)
   end

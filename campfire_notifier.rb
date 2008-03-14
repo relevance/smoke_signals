@@ -32,7 +32,9 @@ class CampfireNotifier
   def build_finished(build)
     clear_flag
     build_text = "Build #{build.label}"
-    speak(build.failed? ? "#{build_text} broken" : "#{build_text} successful")
+    build_text << (build.failed? ? " broken" : " successful")
+    build_text << "\nSee #{build.url} for details"
+    speak(build_text)
   end
 
   def build_fixed(build, previous_build=nil)

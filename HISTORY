@@ -2,3 +2,4 @@
  * Forked from http://rubyforge.org/projects/campfire-ccrb/
  * apr_error are also SVN errors (BUG FIX)
  * doesn't spam campfire when the build loop breaks (BUG FIX)
+ * Include link back to build report
