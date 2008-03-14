@@ -1,26 +1,26 @@
-h1. Campfire Notifier for Ruby Cruise Control
+h1. Smoke Signals
 
-h2. Version: 0.1 (forked from Giles Bowkett's 0.3)
+h2. Version: 0.1 
+Forked from Giles Bowkett's cc_campfire_notifier version 0.3
 
 h2. Description
 A plugin for CruiseControl.rb that does the following features:
-	* Send notifications to a Campfire room with the build status (success, failure, fixed).  
+	* Send notifications to a Campfire room with the build status (success, failure, fixed) along with a URL to the build.
 	* Detects and sends notifications re Subversion failures.  
 	* Supports different rooms per build.
 
 h2. Install
 # sudo gem install tinder
-# copy campfire_notifier.rb into <CRUISE_ROOT>/builder_plugins/installed
-
-h2. Usage
-# copy campfire_notifier.yml_sample to <CRUISE_ROOT>/config/campfire_notifier.yml
+# copy smoke_signals.rb into <CRUISE_ROOT>/builder_plugins/installed
+# copy smoke_signals.yml_sample to <CRUISE_ROOT>/config/smoke_signals.yml
 # modify it with your campfire specifics
 # for project-specific rooms, in your build's specific cruise_config.rb add the following:
-   project.campfire_notifier.room_name = "Room name" # replace Room name
+   project.smoke_signals.room_name = "Room name" # replace Room name
 # restart CruiseControl.rb
 
 h2. URLS
-	* "svn trunk":https://opensource.thinkrelevance.com/svn/incubator/cc_campfire_notifier/campfire_notifier.rb
+  * "Home page": http://opensource.thinkrelevance.com/wiki/smoke_signals
+	* "git master": git://github.com/relevance/smoke_signals.git
 	* "CC.rb plugins documentation":http://cruisecontrolrb.thoughtworks.com/documentation/plugins
 
 h2. LICENSE
