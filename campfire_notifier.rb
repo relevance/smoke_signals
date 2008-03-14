@@ -1,7 +1,7 @@
 require 'tinder'
 
 class CampfireNotifier
-  VERSION = 0.1
+  VERSION = 0.2
   attr_accessor :room_name
 
   def initialize(project = nil)
