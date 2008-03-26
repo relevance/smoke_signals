@@ -33,13 +33,13 @@ class SmokeSignals
     clear_flag
     build_text = "Build #{build.label}"
     build_text << (build.failed? ? " broken" : " successful")
-    build_text << "\nSee #{build.url} for details"
+    build_text << ".<br/>See #{build.url} for details."
     speak(build_text)
   end
 
   def build_fixed(build, previous_build=nil)
     clear_flag
-    speak("Build fixed in #{build.label}")
+    speak("Build fixed in #{build.label}.<br/>See #{build.url} for details.")
   end
   
   def build_loop_failed(error)

@@ -7,22 +7,22 @@ require 'test/spec'
 describe "SmokeSignals" do
   it "speaks when the build is fixed" do
     notifier = SmokeSignals.new
-    build = stub(:label => "label")
-    notifier.expects(:speak).with("Build fixed in label")
+    build = stub(:label => "label", :url => "url")
+    notifier.expects(:speak).with("Build fixed in label.<br/>See url for details.")
     notifier.expects(:clear_flag)
     notifier.build_fixed(build)
   end
   it "speaks when the build is successful" do
     notifier = SmokeSignals.new
     build = stub(:label => "label", :failed? => false, :url => "http://cc.project.com/builds/Project/label")
-    notifier.expects(:speak).with("Build label successful\nSee http://cc.project.com/builds/Project/label for details")
+    notifier.expects(:speak).with("Build label successful.<br/>See http://cc.project.com/builds/Project/label for details.")
     notifier.expects(:clear_flag)
     notifier.build_finished(build)
   end
   it "speaks when the build fails" do
     notifier = SmokeSignals.new
     build = stub(:label => "label", :failed? => true, :url => "http://cc.project.com/builds/Project/label")
-    notifier.expects(:speak).with("Build label broken\nSee http://cc.project.com/builds/Project/label for details")
+    notifier.expects(:speak).with("Build label broken.<br/>See http://cc.project.com/builds/Project/label for details.")
     notifier.expects(:clear_flag)
     notifier.build_finished(build)
   end
