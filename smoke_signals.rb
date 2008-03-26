@@ -39,7 +39,7 @@ class SmokeSignals
 
   def build_fixed(build, previous_build=nil)
     clear_flag
-    speak("Build fixed in #{build.label}.<br/>See #{build.url} for details.")
+    speak("Build fixed in #{build.label}.")
   end
   
   def build_loop_failed(error)

@@ -8,7 +8,7 @@ describe "SmokeSignals" do
   it "speaks when the build is fixed" do
     notifier = SmokeSignals.new
     build = stub(:label => "label", :url => "url")
-    notifier.expects(:speak).with("Build fixed in label.<br/>See url for details.")
+    notifier.expects(:speak).with("Build fixed in label.")
     notifier.expects(:clear_flag)
     notifier.build_fixed(build)
   end
