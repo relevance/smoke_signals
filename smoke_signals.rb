@@ -1,3 +1,10 @@
+begin
+  gem 'tinder'
+rescue Gem::LoadError
+  BAR = "=" * 80
+  puts "#{BAR}\nError - smoke_signals requires the tinder gem - 'sudo gem install tinder'.  Exiting....\n#{BAR}"
+  exit 1
+end
 require 'tinder'
 
 class SmokeSignals

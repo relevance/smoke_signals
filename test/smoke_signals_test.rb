@@ -1,6 +1,5 @@
 require 'rubygems'
 require File.dirname(__FILE__) + '/../smoke_signals'
-require 'rubygems'
 require 'mocha'
 require 'test/spec'
 
