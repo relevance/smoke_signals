@@ -9,7 +9,7 @@ A plugin for CruiseControl.rb offering the following features:
 h2. Install
 Download smoke_signals via git (git clone git://github.com/relevance/smoke_signals.git) or as a tarball (http://github.com/relevance/smoke_signals/tarball/master). Then, on your cruisecontrol.rb server:
  # sudo gem install tinder
- # cp smoke_signals.rb <CRUISE_ROOT>/builder_plugins/installed
+ # cp lib/smoke_signals.rb <CRUISE_ROOT>/builder_plugins/installed
  # cp smoke_signals.yml_sample <CRUISE_ROOT>/config/smoke_signals.yml
  # edit <CRUISE_ROOT>/config/smoke_signals.yml with your campfire specifics
  # for project-specific rooms, in your build's specific cruise_config.rb add the following: 
