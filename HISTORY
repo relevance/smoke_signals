@@ -1,4 +1,5 @@
 HEAD
+  * make it more like a gem with a /lib folder
   * add early failure if tinder gem is not available
 0.1
  * Forked from http://rubyforge.org/projects/campfire-ccrb/
