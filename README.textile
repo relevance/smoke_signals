@@ -3,9 +3,10 @@ h1. Smoke Signals
 h2. Description
 
 A plugin for CruiseControl.rb offering the following features:
-    * Sends notifications to a Campfire room with the build status (success, failure, fixed) along with a URL to the build.
-    * Detects and sends notifications of Subversion failures.
-    * Supports different rooms per project. 
+
+* Sends notifications to a Campfire room with the build status (success, failure, fixed) along with a URL to the build.
+* Detects and sends notifications of Subversion failures.
+* Supports different rooms per project. 
 
 h2. Install
 
@@ -21,9 +22,9 @@ Download smoke_signals via git (git clone git://github.com/relevance/smoke_signa
 
 h2. URLS
 
-  * "Home page": http://opensource.thinkrelevance.com/wiki/smoke_signals
-	* "git master": git://github.com/relevance/smoke_signals.git
-	* "CC.rb plugins documentation":http://cruisecontrolrb.thoughtworks.com/documentation/plugins
+* "Home page": http://opensource.thinkrelevance.com/wiki/smoke_signals
+* "git master": git://github.com/relevance/smoke_signals.git
+* "CC.rb plugins documentation":http://cruisecontrolrb.thoughtworks.com/documentation/plugins
 
 h2. LICENSE
 
