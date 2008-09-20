@@ -5,23 +5,23 @@ require 'test/spec'
 
 describe "SmokeSignals" do
   it "speaks when the build is fixed" do
-    notifier = SmokeSignals.new
+    notifier = SmokeSignals.new(stub(:name => "project_name"))
     build = stub(:label => "label", :url => "url")
-    notifier.expects(:speak).with("Build fixed in label.")
+    notifier.expects(:speak).with("project_name build fixed in label.")
     notifier.expects(:clear_flag)
     notifier.build_fixed(build)
   end
   it "speaks when the build is successful" do
-    notifier = SmokeSignals.new
+    notifier = SmokeSignals.new(stub(:name => "project_name"))
     build = stub(:label => "label", :failed? => false, :url => "http://cc.project.com/builds/Project/label")
-    notifier.expects(:speak).with("Build label successful.<br/>See http://cc.project.com/builds/Project/label for details.")
+    notifier.expects(:speak).with("project_name build label successful.<br/>See http://cc.project.com/builds/Project/label for details.")
     notifier.expects(:clear_flag)
     notifier.build_finished(build)
   end
   it "speaks when the build fails" do
-    notifier = SmokeSignals.new
+    notifier = SmokeSignals.new(stub(:name => "project_name"))
     build = stub(:label => "label", :failed? => true, :url => "http://cc.project.com/builds/Project/label")
-    notifier.expects(:speak).with("Build label broken.<br/>See http://cc.project.com/builds/Project/label for details.")
+    notifier.expects(:speak).with("project_name build label broken.<br/>See http://cc.project.com/builds/Project/label for details.")
     notifier.expects(:clear_flag)
     notifier.build_finished(build)
   end
@@ -34,15 +34,15 @@ describe "SmokeSignals" do
     notifier.is_subversion_down?(stub(:message => "svn: PROPFIND request failed|apr_error")).should == true
   end
   it "speaks when the build loop fails because of a subversion error" do
-    notifier = SmokeSignals.new
+    notifier = SmokeSignals.new(stub(:name => "project_name"))
     notifier.stubs(:flagged?).returns(false)
-    notifier.expects(:speak).with("Build loop failed: Error connecting to Subversion: svn: PROPFIND request failed")
+    notifier.expects(:speak).with("project_name build loop failed: Error connecting to Subversion: svn: PROPFIND request failed")
     notifier.expects(:is_subversion_down?).returns(true)
     notifier.expects(:set_flag)
     notifier.build_loop_failed(stub(:message => "svn: PROPFIND request failed"))
   end
   it "doesn't spam campfire when failing because it's not an svn error" do
-    notifier = SmokeSignals.new
+    notifier = SmokeSignals.new(stub_everything)
     notifier.stubs(:flagged?).returns(false)
     notifier.expects(:speak).times(2)
     notifier.expects(:is_subversion_down?).returns(false)
@@ -56,6 +56,6 @@ describe "SmokeSignals" do
   end
   it "delegates settings to the class variable settings" do
     SmokeSignals.stubs(:settings).returns(settings = stub)
-    SmokeSignals.new.settings.should == settings
+    SmokeSignals.new(stub(:name => "project_name")).settings.should == settings
   end
 end

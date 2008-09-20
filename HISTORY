@@ -1,8 +1,10 @@
-HEAD
+1.0
   * make it more like a gem with a /lib folder
   * add early failure if tinder gem is not available
+	* show project name in the messages spoken into Campfire
+	* Upping version to 1.0 to reflect stability, feature completion
 0.1
- * Forked from http://rubyforge.org/projects/campfire-ccrb/
- * apr_error are also SVN errors (BUG FIX)
- * doesn't spam campfire when the build loop breaks (BUG FIX)
- * Include link back to build report
+  * Forked from http://rubyforge.org/projects/campfire-ccrb/
+  * apr_error are also SVN errors (BUG FIX)
+  * doesn't spam campfire when the build loop breaks (BUG FIX)
+  * Include link back to build report
